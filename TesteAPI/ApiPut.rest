@@ -1,0 +1,9 @@
+PUT http://localhost:5000/categories/1
+Content-Type: application/json
+
+{
+    "Title" : "Higiene"
+}
+
+
+

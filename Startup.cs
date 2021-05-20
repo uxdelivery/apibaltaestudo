@@ -74,10 +74,6 @@ namespace APICrudBasica
 
             services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("cn")));
             // services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("DataBase"));
-            //services.AddScoped<DataContext,DataContext>();
-            //services.AddScoped<DataContext,Category>();
-            //services.AddScoped<DataContext,Product>();
-            //services.AddScoped<DataContext,User>();
 
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
 
@@ -107,18 +103,19 @@ namespace APICrudBasica
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => {
+           // if (env.IsDevelopment())
+           // {
+              
+           // }
+
+            app.UseDeveloperExceptionPage();
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
                      c.SwaggerEndpoint("/swagger/v1/swagger.json", "APICrudBasica v1");
                      
                      });
-            }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
             app.UseMiddleware<CacheMiddleware>();
 /*

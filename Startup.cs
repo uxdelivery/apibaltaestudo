@@ -72,8 +72,8 @@ namespace APICrudBasica
                 });
             });
 
-            //services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("cn")));
-             services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("DataBase"));
+            services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("cn")));
+            // services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("DataBase"));
             //services.AddScoped<DataContext,DataContext>();
             //services.AddScoped<DataContext,Category>();
             //services.AddScoped<DataContext,Product>();
